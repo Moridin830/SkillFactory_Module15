@@ -24,14 +24,17 @@ namespace Task1
 
         static string[] GetAllStudents(Classroom[] classes)
         {
+            // получим списки студентов
             var students_a = classes.Select(x => x.Students);
             List<string> vs = new List<string>();
 
             foreach (var currentList in students_a)
             {
+                // объединим в один список
                 vs = vs.Concat(currentList).ToList();
             }
 
+            // вернем в виде массива
             return vs.ToArray();
         }
 
